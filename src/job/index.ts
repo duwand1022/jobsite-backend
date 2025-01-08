@@ -5,7 +5,7 @@ import { Job } from "../entity/Job.entity";
 export const getJobList = async (req: Request, res: Response) => {
     const jobRepository = AppDataSource.getRepository(Job);
     const jobs = await jobRepository.find();
-    
+
     return res
       .status(200)
       .json({ data : jobs });
